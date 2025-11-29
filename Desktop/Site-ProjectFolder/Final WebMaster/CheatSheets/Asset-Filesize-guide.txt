@@ -1,0 +1,12 @@
+| Type                                               | Ideal Max File Size       | Absolute Max | Format                                                   | Notes                                                                                         |
+| -------------------------------------------------- | ------------------------- | ------------ | -------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+
+| **Photos**                                         | **150–300 KB**            | 500 KB       | `.jpg` or `.webp`                                        | Use high compression, web-optimized exports. `.webp` gives ~40% smaller files than JPEG.      |
+
+| **Illustrations / Graphics**                       | **50–200 KB**             | 300 KB       | `.svg` (for vector), `.png` (for raster w/ transparency) | Always prefer SVG — infinitely scalable + tiny file sizes.                                    |
+
+| **Background Images / Hero Visuals**               | **400–800 KB**            | 1 MB         | `.jpg` or `.webp`                                        | Optimize heavily — it’s the biggest visual but must load fast.                                |
+
+| **Typography Animations (e.g. GSAP, SVG, Lottie)** | **<200 KB per animation** | 500 KB       | `.json` (Lottie), `.svg`, `.js`                          | Keep vector-based when possible — GSAP animating DOM/SVG is lighter than video or GIF.        |
+
+| **Video / Motion Texture**                         | **Under 2 MB**            | 5 MB         | `.mp4` or `.webm`                                        | Only if absolutely necessary (e.g. short loops). Consider autoplay muted and compressed 720p. |

@@ -1,0 +1,22 @@
+    <div class="blocks">
+        <div class="block init" data-block-section="1" data-href="home">
+            <div class="block__title">Home</div>
+            <div class="block__number"></div>
+        </div>
+        <div class="block init" data-block-section="2" data-href="mission">
+            <div class="block__title">Mission</div>
+            <div class="block__number"></div>
+        </div>
+        <div class="block init" data-block-section="3" data-href="about">
+            <div class="block__title">About</div>
+            <div class="block__number"></div>
+        </div>
+        <div class="block init" data-block-section="4" data-href="services">
+            <div class="block__title">Services</div>
+            <div class="block__number"></div>
+        </div>
+        <div class="block init" data-block-section="5" data-href="contact">
+            <div class="block__title">Contact</div>
+            <div class="block__number"></div>
+        </div>
+    </div>

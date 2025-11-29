@@ -1,0 +1,48 @@
+
++-------------------------------------------------------------+
+|    G U I D E   T O   L I V E   S E R V E R   S E T U P      |
+|                      ( B R O W S E R S Y N C )              |
++-------------------------------------------------------------+
+
+. . . P R E R E Q U I S I T E S . . .
+
+|> 1. N O D E . J S : Must be installed on your computer.
+|> 2. W I - F I : Computer & phone must be on the same network.
+
+/-------------------------------------------------------------
+
+| S T E P   1 :   I N S T A L L   G L O B A L L Y             |
+-------------------------------------------------------------/
+
+[!] O P E N : Terminal (Mac/Linux) or Command Prompt (Admin).
+[!] N O T E : Use 'sudo' as this resolved your previous issue.
+
+$ sudo npm install -g browser-sync
+(Enter your password if prompted)
+
+/-------------------------------------------------------------
+
+| S T E P   2 :   S T A R T   T H E   S E R V E R             |
+-------------------------------------------------------------/
+
+[>] Use 'cd' to navigate to your project's root folder.
+*Example: cd ~/Dev/MyProject
+
+[>] Execute the server start command:
+
+$ browser-sync start --server --files ".html, css/.css, js/*.js"
+/-------------------------------------------------------------
+
+| S T E P   3 :   A C C E S S   O N   M O B I L E             |
+-------------------------------------------------------------/
+
+[1] Terminal will display URLs. Find the 'External' link:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+| Local:    http://localhost:3000                           |
+| External: https://www.google.com/search?q=http://192.168.1.10:3000  <-- U S E   T H I S   |
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+[2] On your phone, manually enter the 'External' URL into the browser.
+
+[3] Enjoy synchronized, auto-reloading development!
+

@@ -1,0 +1,2 @@
+https://www.youtube.com/watch?v=07yAuKOGj7Y — Locomotive scroll + Folder website idea (navigation stacks at the top of the age while scrolling down.) use of different brand colours on the way. click to smoothscroll to the section. 
+Use of GSAP only when nessesary. (scrollTrigger and Lenis Smoothscroll seem copatible, but can't figure out how to implement them into a page)

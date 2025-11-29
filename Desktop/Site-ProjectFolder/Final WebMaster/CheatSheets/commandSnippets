@@ -1,0 +1,22 @@
+
+<!-- THIS COMMAND FOR OPENING LIVE SERVER
+npx live-server --port=8080 --open=./index.html
+
+Actually revert the project back to an older commit (and keep history)
+If you want to undo changes but keep history clean:
+git revert 
+
+<"commit-ID"-hash> -->
+
+
+
+'Git Pss: MayoPass'
+
+
+THIS COMMAND FOR PHONE LIVE SERVER
+npx live-server --port=8080 --host=0.0.0.0 --open=./index.html
+
+
+——THN ON PHONE GO TO: http://192.168.0.157:8080
+
+

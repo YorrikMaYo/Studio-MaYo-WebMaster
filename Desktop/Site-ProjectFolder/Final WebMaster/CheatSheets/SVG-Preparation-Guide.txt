@@ -1,0 +1,71 @@
+# 🖋 Studio MaYo — SVG Preparation Guide
+**Purpose:** Keep our vector graphics light, clean, and animation-ready for the web.
+
+---
+
+## 🧱 1. Why SVG
+- Infinitely scalable — no pixelation on retina screens  
+- Very small file size compared to PNG/JPG  
+- Fully styleable + animatable with CSS or GSAP  
+- Text-based format → can be optimized and version-controlled on GitHub  
+
+---
+
+## 🧰 2. Design & Export Setup
+
+### 🎨 A. In Illustrator
+1. **Use clean vector shapes.**
+   - Merge or simplify paths (`Pathfinder > Unite`)
+   - Remove hidden layers, guides, and unused swatches
+2. **Text:**  
+   - Convert to outlines (`Type > Create Outlines`)  
+     → Ensures consistent rendering everywhere.
+3. **Artboard:**  
+   - Fit artboard to artwork (`Alt+Ctrl+Shift+F`)  
+   - Name artboard logically (e.g. `logo`, `poster-title`, `icon-grid`)
+4. **Export Settings:**  
+   - `File → Export → Export As… → SVG`
+   - ✅ Options:
+     - **Styling:** Presentation Attributes  
+     - **Font:** Convert to Outlines  
+     - **Images:** Embed (only if needed)  
+     - **Decimal:** 2–3  
+     - **Responsive:** ✔ checked
+
+Save → open in a text editor (VS Code) → inspect for unnecessary metadata.
+
+---
+
+### 🪄 B. In Figma
+1. Select frame or vector group.  
+2. `Right-click → Copy as → Copy as SVG`  
+   or `Export → SVG`
+3. **Before exporting:**
+   - Flatten vectors (`Ctrl/Cmd + E`)  
+   - Outline text (`Cmd + Shift + O`)  
+   - Remove unused layers or effects.
+
+Paste into a `.svg` file and format it if needed.
+
+---
+
+## ✂️ 3. Optimize (Always)
+
+Use one of these:
+- [SVGOMG](https://jakearchibald.github.io/svgomg/) → browser-based optimizer  
+- or CLI tool `svgo`
+
+**Recommended SVGOMG settings:**
+- ✅ Remove Metadata  
+- ✅ Remove Comments  
+- ✅ Collapse Groups  
+- ✅ Remove Hidden Elements  
+- ✅ Prefer ViewBox to Width/Height  
+
+Goal: cut file size by **50–90 %**.
+
+---
+
+## ⚡️ 4. File Naming & Organization
+Keep naming consistent and lowercase:
+

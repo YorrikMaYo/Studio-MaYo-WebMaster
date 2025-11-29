@@ -1,0 +1,176 @@
+CSS QUICK REFERENCE & CHEAT SHEET (ASCII FORMAT)
+This is a flat text file containing the most common CSS syntax, properties, and concepts for rapid look-up.
+
+================================================================================
+
+1. Basic Syntax & Comments
++----------------+--------------------------------------+--------------------------------------------------+
+| Concept        | Example                              | Notes                                            |
++----------------+--------------------------------------+--------------------------------------------------+
+| Syntax         | selector { property: value; }        | Declarations end with a semicolon.               |
+| Comments       | /* This is a single-line comment. */ | Comments cannot be nested.                       |
+| Import         | @import url('styles/print.css');     | Imports another stylesheet. Must be at the top.  |
+| Media Query    | @media (min-width: 768px) { ... }    | Apply styles only when conditions are met.       |
+| Keyframes      | @keyframes slide { 0% {left: 0;}...  | Defines animation behavior.                      |
++----------------+--------------------------------------+--------------------------------------------------+
+
+================================================================================
+
+2. Selectors (The "Who")
++-------------------+-----------------------------+------------------------------------------------------+
+| Type              | Example                     | Description                                          |
++-------------------+-----------------------------+------------------------------------------------------+
+| Type (Element)    | p {}                        | Selects all <p> elements.                            |
+| Class             | .highlight {}               | Selects all elements with class="highlight".         |
+| ID                | #main-nav {}                | Selects the unique element with id="main-nav".       |
+| Universal         | * {}                        | Selects all elements. (Use sparingly).               |
+| Descendant        | ul li {}                    | Selects all <li> inside any <ul>.                    |
+| Child             | header > p {}               | Selects only direct <p> children of <header>.        |
+| Adjacent Sibling  | h2 + p {}                   | Selects the first <p> immediately after an <h2>.     |
+| General Sibling   | h2 ~ p {}                   | Selects all <p> elements preceded by an <h2>.        |
+| Attribute         | a[href^="http"] {}          | Selects <a> tags whose href starts with "http".      |
+| Pseudo-Class      | a:hover {}                  | Selects <a> when the mouse is over it.               |
+| Pseudo-Element    | p::first-letter {}          | Selects the first letter of every <p>.               |
++-------------------+-----------------------------+------------------------------------------------------+
+
+================================================================================
+
+3. Box Model & Sizing
+The Box Model defines how elements occupy space: Content > Padding > Border > Margin.
+
++----------------+-----------------------------+------------------------------------------------------+
+| Property       | Value (Example)             | Description                                          |
++----------------+-----------------------------+------------------------------------------------------+
+| Width/Height   | width: 100px;               | Sets the inner content size.                         |
+| Max/Min Width  | max-width: 90%;             | Limits how large/small an element can grow/shrink.   |
+| Box Sizing     | box-sizing: border-box;     | Includes padding/border in width/height. (RECOMMENDED) |
+| Padding        | padding: 10px 20px 5px;     | Space between content and border. (T, R/L, B)        |
+| Margin         | margin: 0 auto;             | Space outside the border. auto centers block elements.|
+| Border         | border: 1px solid #333;     | Sets thickness, style, and color of the border.      |
++----------------+-----------------------------+------------------------------------------------------+
+
+================================================================================
+
+4. Layout & Positioning
++------------------+-----------------------------+------------------------------------------------------+
+| Property         | Value (Example)             | Description                                          |
++------------------+-----------------------------+------------------------------------------------------+
+| Display (Block)  | display: block;             | Takes up full available width.                       |
+| Display (Inline) | display: inline;            | Takes up only necessary width. Ignores height/width. |
+| Display (I-B)    | display: inline-block;      | Takes up necessary width but accepts height/width.   |
+| Display (Hidden) | display: none;              | Hides element completely, removes from flow.         |
+| Position (Rel)   | position: relative;         | Positions relative to its normal position.           |
+| Position (Abs)   | position: absolute;         | Positions relative to its nearest positioned ancestor.|
+| Position (Fixed) | position: fixed;            | Positions relative to the viewport (fixed when scrolling).|
+| Position (Sticky)| position: sticky;           | Sticks to the viewport edge when scrolled past.      |
+| Z-Index          | z-index: 10;                | Controls stacking order. (Higher = closer to user).  |
+| Float            | float: left;                | Pushes element to the side. (Avoid for modern layout). |
+| Clear            | clear: both;                | Prevents element from floating next to other elements. |
++------------------+-----------------------------+------------------------------------------------------+
+
+================================================================================
+
+5. Flexbox (One-Dimensional Layout)
+Applied to the Parent Container (Flex Container):
++----------------+-------------------------------+------------------------------------------------------+
+| Property       | Value (Example)               | Description                                          |
++----------------+-------------------------------+------------------------------------------------------+
+| Enable         | display: flex;                | Initializes the flex container.                      |
+| Direction      | flex-direction: row;          | Main axis is horizontal (default).                   |
+| Wrap           | flex-wrap: wrap;              | Allows items to wrap onto multiple lines.            |
+| Justify        | justify-content: center;      | Aligns items along the main axis.                |
+| Align Items    | align-items: center;          | Aligns items along the cross axis.               |
++----------------+-------------------------------+------------------------------------------------------+
+
+Applied to the Child Items (Flex Items):
++----------------+-------------------------------+------------------------------------------------------+
+| Property       | Value (Example)               | Description                                          |
++----------------+-------------------------------+------------------------------------------------------+
+| Grow           | flex-grow: 1;                 | Ability to grow if necessary (takes up extra space). |
+| Shrink         | flex-shrink: 0;               | Ability to shrink if necessary (prevents shrinking). |
+| Basis          | flex-basis: 200px;            | Item's default size before growing/shrinking.        |
+| Shorthand      | flex: 1 0 200px;              | Shorthand for: grow shrink basis.                    |
+| Align Self     | align-self: flex-end;         | Overrides the container's align-items.             |
++----------------+-------------------------------+------------------------------------------------------+
+
+================================================================================
+
+6. Grid (Two-Dimensional Layout)
+Applied to the Parent Container (Grid Container):
++-----------------------+-------------------------------+------------------------------------------------------+
+| Property              | Value (Example)               | Description                                          |
++-----------------------+-------------------------------+------------------------------------------------------+
+| Enable                | display: grid;                | Initializes the grid container.                      |
+| Columns               | grid-template-columns: 1fr... | Defines column widths using fractional units (fr). |
+| Rows                  | grid-template-rows: auto 100px;| Defines row heights. auto fits content.            |
+| Gap                   | gap: 10px;                    | Sets space between rows and columns (shorthand).     |
+| Areas                 | grid-template-areas: "...";   | Names areas for easier item placement.               |
++-----------------------+-------------------------------+------------------------------------------------------+
+
+Applied to the Child Items (Grid Items):
++----------------+-------------------------------+------------------------------------------------------+
+| Property       | Value (Example)               | Description                                          |
++----------------+-------------------------------+------------------------------------------------------+
+| Placement      | grid-column: 1 / 3;           | Item spans from column line 1 to column line 3.      |
+| Shorthand      | grid-area: content;           | Places the item directly into a named area.          |
+| Placement      | grid-row: span 2;             | Item spans 2 rows.                                   |
++----------------+-------------------------------+------------------------------------------------------+
+
+================================================================================
+
+7. Typography
++-------------------+-----------------------------+------------------------------------------------------+
+| Property          | Value (Example)             | Description                                          |
++-------------------+-----------------------------+------------------------------------------------------+
+| Font Family       | font-family: Arial, sans... | List of fonts in order of preference.                |
+| Font Size         | font-size: 16px;            | Sets the size of the text.                           |
+| Font Weight       | font-weight: bold;          | Sets the boldness (e.g., 400, 700).                  |
+| Line Height       | line-height: 1.5;           | Space between lines of text (unitless is recommended). |
+| Text Align        | text-align: center;         | Alignment within the element.                        |
+| Text Transform    | text-transform: uppercase;  | Changes capitalization.                              |
++-------------------+-----------------------------+------------------------------------------------------+
+
+================================================================================
+
+8. Color, Background, and Visibility
++-------------------+-----------------------------+------------------------------------------------------+
+| Property          | Value (Example)             | Description                                          |
++-------------------+-----------------------------+------------------------------------------------------+
+| Color             | color: #333;                | Text color.                                        |
+| Background        | background: #f0f0f0;        | Shorthand for color, image, position, etc.         |
+| BG Color          | background-color: rgb(255.. | Solid background color.                              |
+| BG Image          | background-image: url('im.. | Sets a background image.                             |
+| BG Repeat         | background-repeat: no-repeat;| How the background image repeats.                   |
+| Opacity           | opacity: 0.5;               | Sets transparency (0.0 to 1.0).                      |
+| Visibility        | visibility: hidden;         | Hides the element, but it still takes up space.      |
+| Box Shadow        | box-shadow: 2px 2px 5px..   | Adds a shadow effect.                                |
++-------------------+-----------------------------+------------------------------------------------------+
+
+================================================================================
+
+9. Common Units
++------------+-----------+------------------------------------------------------+
+| Unit       | Type      | Description                                          |
++------------+-----------+------------------------------------------------------+
+| px       | Absolute  | Pixels. Fixed size, doesn't scale with text size.    |
+| em       | Relative  | Relative to the font-size of the parent element.|
+| rem      | Relative  | Relative to the font-size of the root (<html>). (RECOMMENDED)|
+| %        | Relative  | Relative to the size of the parent element.          |
+| vw       | Relative  | Viewport Width. 1vw is 1% of the viewport width.     |
+| vh       | Relative  | Viewport Height. 1vh is 1% of the viewport height.   |
+| fr       | Relative  | Fractional Unit for Grid (fraction of available space).|
++------------+-----------+------------------------------------------------------+
+
+================================================================================
+
+10. Transitions & Transforms
++-----------------+-----------------------------+------------------------------------------------------+
+| Property        | Value (Example)             | Description                                          |
++-----------------+-----------------------------+------------------------------------------------------+
+| Transition      | transition: all 0.3s ease.. | Shorthand: property, duration, timing-function, delay.|
+| Transform       | transform: scale(1.1) rotate..| Modifies the element's position, rotation, scale, or skew.|
+| Function (Move) | translate(x, y)             | Moves the element.                                   |
+| Function (Rot)  | rotate(45deg)               | Rotates the element.                                 |
+| Function (Scale)| scale(1.5)                  | Scales the element (1.5 times bigger).               |
++-----------------+-----------------------------+------------------------------------------------------+
+

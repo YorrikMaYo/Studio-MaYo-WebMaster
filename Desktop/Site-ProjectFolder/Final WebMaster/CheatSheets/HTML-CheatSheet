@@ -1,0 +1,86 @@
+HTML QUICK REFERENCE & CHEAT SHEET (ASCII FORMAT)
+This flat text file contains the most common HTML tags, attributes, and structural concepts for rapid look-up.
+
+================================================================================
+
+1. Document Structure & Boilerplate
++--------------------+--------------------------------------+------------------------------------------------------+
+| Concept            | Example                              | Description                                          |
++--------------------+--------------------------------------+------------------------------------------------------+
+| Doctype            | <!DOCTYPE html>                      | Must be the very first line of code.                 |
+| Root Element       | <html></html>                        | The container for the entire page.                   |
+| Metadata Container | <head></head>                        | Contains non-visible info (title, CSS, JS links).    |
+| Viewport           | <meta name="viewport" content="...">| Essential for mobile responsiveness.                 |
+| Character Set      | <meta charset="UTF-8">               | Specifies character encoding (UTF-8 is standard).    |
+| Title              | <title>Page Title</title>            | Text displayed in the browser tab.                   |
+| Body Container     | <body></body>                        | Contains all visible content (text, images, links).  |
++--------------------+--------------------------------------+------------------------------------------------------+
+
+================================================================================
+
+2. Text & Semantic Elements
++--------------------+-----------------------------+------------------------------------------------------+
+| Tag                | Example                     | Description                                          |
++--------------------+-----------------------------+------------------------------------------------------+
+| Headings           | <h1>...</h1>                | Defines section headings (H1 is the most important). |
+| Paragraph          | <p>...</p>                  | Standard block of text.                              |
+| Division           | <div>...</div>              | Generic block-level container (no semantic meaning). |
+| Span               | <span>...</span>            | Generic inline container.                            |
+| Bold (Importance)  | <strong>...</strong>         | Text with strong importance.                         |
+| Italic (Emphasis)  | <em>...</em>                | Emphasized text.                                     |
+| Unordered List     | <ul><li>...</li></ul>        | Bulleted list.                                       |
+| Ordered List       | <ol><li>...</li></ol>        | Numbered list.                                       |
+| Main Content       | <main>...</main>            | The dominant content of the document.                |
+| Section            | <section>...</section>      | Generic standalone section (e.g., introduction, about). |
+| Navigation         | <nav>...</nav>              | Section containing navigation links.                 |
+| Header/Footer      | <header> / <footer>         | Introduction/conclusion section for a page/section.  |
++--------------------+-----------------------------+------------------------------------------------------+
+
+================================================================================
+
+3. Links & Media
++----------------------+-----------------------------+------------------------------------------------------+
+| Tag & Attribute      | Example                     | Description                                          |
++----------------------+-----------------------------+------------------------------------------------------+
+| Link (Anchor)        | <a href="...">Link</a>      | Creates a hyperlink.                                 |
+| Link Target (New Tab)| target="_blank"             | Opens the link in a new browser tab/window.          |
+| Image                | <img src="file.jpg" ...>    | Embeds an image. Self-closing tag.                   |
+| Image Alt Text       | alt="Description"           | MANDATORY: Textual description for screen readers/errors. |
+| Video                | <video src="..." controls></video> | Embeds video content with default controls.        |
+| Source (for Media)   | <source src="path.mp4">     | Specifies multiple media files for browser choice.   |
++----------------------+-----------------------------+------------------------------------------------------+
+
+================================================================================
+
+4. Forms & User Input
++--------------------+-----------------------------+------------------------------------------------------+
+| Tag / Type         | Example                     | Description                                          |
++--------------------+-----------------------------+------------------------------------------------------+
+| Form Container     | <form action="/submit">     | Container for interactive controls. action is URL to submit data. |
+| Label              | <label for="email">Email</label>| Associates text with a form control.                 |
+| Text Input         | <input type="text" id="email">| Single-line text input field.                        |
+| Password Input     | <input type="password">     | Text input where characters are masked.              |
+| Checkbox           | <input type="checkbox">     | Allows selection of zero or more options.            |
+| Radio Button       | <input type="radio" name="g">| Allows selection of exactly one option from a set.   |
+| Submit Button      | <input type="submit">       | Button that submits the form data.                   |
+| Button Element     | <button type="button">Click</button>| General clickable button (type="button" prevents form submission).|
+| Dropdown List      | <select><option>...</select>| Creates a dropdown menu.                             |
+| Text Area          | <textarea>...</textarea>    | Multi-line text input field.                         |
+| Placeholder        | placeholder="Enter Name"    | Hint text shown in the input field when empty.       |
+| Required           | required                    | Attribute that prevents form submission if field is empty.|
++--------------------+-----------------------------+------------------------------------------------------+
+
+================================================================================
+
+5. Global Attributes (Apply to most elements)
++--------------------+-----------------------------+------------------------------------------------------+
+| Attribute          | Value (Example)             | Description                                          |
++--------------------+-----------------------------+------------------------------------------------------+
+| Class              | class="card highlight"      | Specifies one or more class names for styling (CSS). |
+| ID                 | id="main-header"            | Unique identifier for the element.                   |
+| Style (Inline CSS) | style="color: blue;"        | Applies inline CSS rules. (Use sparingly).           |
+| Custom Data        | data-user-id="123"          | Stores custom data private to the page/script.       |
+| Disabled           | disabled                    | Makes the form element unusable and unclickable.     |
+| Aria Label         | aria-label="Close button"   | Provides a label for accessibility/screen readers.   |
++--------------------+-----------------------------+------------------------------------------------------+
+

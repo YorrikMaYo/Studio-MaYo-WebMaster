@@ -1,0 +1,165 @@
+JAVASCRIPT QUICK REFERENCE & CHEAT SHEET (ASCII FORMAT)
+This flat text file contains the most common JavaScript syntax, methods, and DOM manipulation techniques for rapid look-up.
+
+================================================================================
+
+1. Basics & Data Types
++----------------+--------------------------------------+------------------------------------------------------+
+| Concept        | Example                              | Description                                          |
++----------------+--------------------------------------+------------------------------------------------------+
+| Comment (S-L)  | // Single line comment               | Single-line comment.                                 |
+| Comment (M-L)  | /* Multi-line comment */             | Multi-line comment.                                  |
+| String         | "Hello" or 'World'                   | Textual data. Use backticks for interpolation.       |
+| Number         | 42 or 3.14                           | Integers and floating-point numbers.                 |
+| Boolean        | true / false                         | Logical value.                                       |
+| Null           | let x = null;                        | Intentional absence of any object value.             |
+| Undefined      | let y;                               | Variable declared but not assigned a value.          |
+| Equality (Strict)| if (a === b)                         | Checks value AND type. (RECOMMENDED)                 |
+| Equality (Loose)| if (a == b)                          | Checks value only (type coercion). (AVOID)           |
++----------------+--------------------------------------+------------------------------------------------------+
+
+================================================================================
+
+2. Variables & Scope
++------------------+-----------------------------+------------------------------------------------------+
+| Keyword          | Example                     | Description                                          |
++------------------+-----------------------------+------------------------------------------------------+
+| let              | let count = 0;              | Block-scoped. Can be reassigned (mutable).           |
+| const            | const PI = 3.14159;         | Block-scoped. Cannot be reassigned (immutable). (RECOMMENDED DEFAULT) |
+| var (Legacy)     | var legacy = 1;             | Function-scoped. (AVOID in new code).                |
+| Template Literal | \nHello ${name}!\n        | String interpolation using backticks (allows multiline).|
+| Destructuring (Array)| const 
+
+a,b
+ = 
+
+1,2
+;   | Extracts values from arrays/objects into new variables.|
+| Destructuring (Object)| const {x, y} = obj;     | Extracts properties from objects.                    |
++------------------+-----------------------------+------------------------------------------------------+
+
+================================================================================
+
+3. Functions
++------------------+-----------------------------+------------------------------------------------------+
+| Type             | Example                     | Description                                          |
++------------------+-----------------------------+------------------------------------------------------+
+| Declaration      | function sum(a,b) {...}     | Hoisted (callable before defined).                   |
+| Expression       | const diff = function() {...}| Not hoisted.                                         |
+| Arrow Function   | const mult = (a, b) => a * b;| Concise syntax; inherits 'this' from parent scope.   |
+| Anonymous        | setTimeout(() => {...}, 1000);| Used as callbacks; no name.                          |
+| Call             | sum(5, 3)                   | Executes the function.                               |
+| Return           | return result;              | Specifies the value the function outputs.            |
++------------------+-----------------------------+------------------------------------------------------+
+
+================================================================================
+
+4. Control Flow & Loops
++----------------+-----------------------------+------------------------------------------------------+
+| Concept        | Example                     | Description                                          |
++----------------+-----------------------------+------------------------------------------------------+
+| If/Else        | if (a > b) {...} else {...} | Executes blocks based on condition.                  |
+| Switch         | switch(day) {case 1: ...}   | Evaluates an expression against multiple cases.      |
+| Ternary Op.    | condition ? 'True' : 'False'| Concise conditional expression.                      |
+| For Loop       | for (let i = 0; i < 5; i++)| Repeats code a set number of times.                  |
+| For...of       | for (const x of array) {}   | Iterates over the values of an iterable (e.g., Array).|
+| For...in       | for (const key in object) {}| Iterates over the keys of an object.             |
+| While Loop     | while (i < 5) {...}         | Repeats code while a condition is true.              |
++----------------+-----------------------------+------------------------------------------------------+
+
+================================================================================
+
+5. Arrays & Common Methods
++----------------+-----------------------------+------------------------------------------------------+
+| Concept        | Example                     | Description                                          |
++----------------+-----------------------------+------------------------------------------------------+
+| Create Array   | const arr = 
+
+1, 
+′
+ two 
+′
+ ,3
+;  | An ordered list of values.                           |
+| Access Item    | arr
+
+0
+                      | Retrieves the item at the specified index.           |
+| Add to End     | arr.push(4);                | Adds an element to the end of the array.             |
+| Remove from End| arr.pop();                  | Removes and returns the last element.                |
+| Iterate (Map)  | arr.map(x => x * 2)         | Creates a NEW array by transforming every item.      |
+| Filter         | arr.filter(x => x > 2)      | Creates a NEW array with items that pass a test.     |
+| Find Item      | arr.find(x => x === 3)      | Returns the first element that passes a test.    |
+| Check Item     | arr.includes(3)             | Returns true if the array contains the value.        |
++----------------+-----------------------------+------------------------------------------------------+
+
+================================================================================
+
+6. DOM Manipulation (Interacting with HTML)
++--------------------+--------------------------------------+------------------------------------------------------+
+| Method             | Example                              | Description                                          |
++--------------------+--------------------------------------+------------------------------------------------------+
+| Get Element by ID  | document.getElementById('myId')      | Selects a single element by its ID attribute.        |
+| Query Selector (1) | document.querySelector('.myClass')   | Selects the first element matching a CSS selector.   |
+| Query Selector (All)| document.querySelectorAll('p.data')  | Selects all elements matching a selector (returns NodeList).|
+| Create Element     | document.createElement('div')        | Creates a new HTML element node.                     |
+| Add Child          | parent.appendChild(child)            | Inserts a node as the last child of a parent node.   |
+| Change Text        | element.textContent = 'New Text'     | Sets or gets the element's textual content.          |
+| Change HTML        | element.innerHTML = '<b>Bold</b>'    | Sets or gets the element's HTML content.             |
+| Add Class          | element.classList.add('active')      | Adds a CSS class name.                               |
+| Remove Class       | element.classList.remove('active')   | Removes a CSS class name.                            |
+| Event Listener     | btn.addEventListener('click', fn)    | Attaches a function to run when a specified event occurs.|
++--------------------+--------------------------------------+------------------------------------------------------+
+
+================================================================================
+
+7. GSAP (GreenSock Animation Platform)
++------------------+-----------------------------+------------------------------------------------------+
+| Concept          | Example                     | Description                                          |
++------------------+-----------------------------+------------------------------------------------------+
+| Core Tween (to)  | gsap.to(".box", {x: 100});  | Animates from the current state to the new state.  |
+| Initial State    | gsap.from(".box", {opacity: 0});| Animates from the specified state to the current state.|
+| Full Control     | gsap.fromTo(".box", {x: -100}, {x: 100});| Animates from one state to another.              |
+| Timeline Init    | const tl = gsap.timeline(); | Used to sequence multiple animations.                  |
+| Add to Timeline  | tl.to(".box", {rotation: 360});| Adds a tween to the timeline, played in order.         |
+| Duration         | duration: 1.5               | Sets the length of the animation in seconds.           |
+| Delay            | delay: 0.5                  | Waits for a moment before the animation starts.        |
+| Easing           | ease: "power1.inOut"        | Controls the rate of change during the animation.      |
++------------------+-----------------------------+------------------------------------------------------+
+
+
+
+7. GSAP (GreenSock Animation Platform)
++------------------+-----------------------------+------------------------------------------------------+
+| Method/Concept   | Example                     | Description                                          |
++------------------+-----------------------------+------------------------------------------------------+
+| Core Tween (to)  | gsap.to(".box", {x: 100});  | Animates from the current state to the new state.  |
+| Initial State    | gsap.from(".box", {opacity: 0});| Animates from the specified state to the current state.|
+| Full Control     | gsap.fromTo(".box", {x: -100}, {x: 100});| Animates from one state to another.              |
+| Instant Set      | gsap.set(".box", {y: 50});  | Sets properties instantly, without animation.          |
+| Timeline Init    | const tl = gsap.timeline(); | Used to sequence multiple animations.                  |
+| Add to Timeline  | tl.to(".box", {rotation: 360});| Adds a tween to the timeline, played in order.         |
+| Play/Pause       | tl.pause() / tl.play()      | Control the playback of the animation or timeline.     |
+| Seek             | tl.seek(1.5)                | Jumps to a specific time (in seconds) in the animation.|
+| Position (tl)    | tl.to(".box", {x: 50}, "<") | Controls placement in a timeline (e.g., "<" = start with previous).|
++------------------+-----------------------------+------------------------------------------------------+
+| PROPERTY CHEAT SHEET (Tween Vars Object)                                                             |
++------------------+-----------------------------+------------------------------------------------------+
+| Duration         | duration: 1.5               | Sets the length of the animation in seconds.           |
+| Delay            | delay: 0.5                  | Waits for a moment before the animation starts.        |
+| Easing           | ease: "power2.inOut"        | Controls the rate of change (smoothness/bounce).       |
+| Move (X/Y)       | x: 100, y: -50              | Translate on the X (horizontal) or Y (vertical) axis.|
+| Scale            | scale: 1.2                  | Uniformly changes size (1 = 100%).                     |
+| Rotation         | rotation: 360               | Rotates the element in degrees.                        |
+| Repeat/Yoyo      | repeat: -1, yoyo: true      | Repeats infinitely (-1); reverses the animation (yoyo).|
+| Stagger          | stagger: 0.1                | Offsets the start time for tweens on multiple targets.|
+| Callback         | onComplete: myFunc          | Function to run when the tween finishes.               |
++------------------+-----------------------------+------------------------------------------------------+
+| 7.1 Text/Letter Animations (Requires SplitText Plugin)                                               |
++------------------+-----------------------------+------------------------------------------------------+
+| Split Text Setup | const s = new SplitText(".text", {type: "chars"}); | Splits text into individual DOM elements (chars, words, lines).|
+| Animate Chars    | gsap.from(s.chars, {opacity: 0, y: 20, stagger: 0.05});| Animates letter-by-letter using the stagger property.|
+| Animate Words    | gsap.to(s.words, {rotation: 10, ease: "none", stagger: 0.2});| Targets the word elements for word-by-word effects.   |
+| Combined Type    | const s = new SplitText(".text", {type: "words, lines"}); | Splits by words and lines, allowing you to target both.|
+| Revert Split     | s.revert();                 | Restores the text to its original, unsplit state (removes wrappers).|
++------------------+-----------------------------+------------------------------------------------------+

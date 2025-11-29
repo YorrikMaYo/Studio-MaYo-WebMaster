@@ -1,0 +1,61 @@
+VARIABLE FONT GRAVITY EFFECT REUSE INSTRUCTIONS
+
+This document outlines how to generalize the custom letter-by-letter gravity effect (from script.js) to any element on your page using a single shared CSS selector.
+
+Goal: Apply the individual letter proximity animation to any H1, H2, or other text element.
+
+--------------------------------------------------------------------------------
+
+STEP 1: HTML STRUCTURE (REQUIRED)
+
+For the gravity effect to work on individual letters, every text element you want to animate MUST have two things:
+1.  A parent element with the **shared class** (e.g., `js-variable-gravity`).
+2.  The text broken up into individual **<span>** tags.
+
+Example HTML Setup:
+
+// To apply the effect to the main title:
+<h1 class="js-variable-gravity">
+    <span>S</span><span>t</span><span>u</span><span>d</span><span>i</span><span>o</span>...
+</h1>
+
+// To apply the effect to a new element (like a footer heading):
+<h2 class="js-variable-gravity">
+    <span>C</span><span>o</span><span>n</span><span>t</span><span>a</span><span>c</span><span>t</span>
+</h2>
+
+--------------------------------------------------------------------------------
+
+STEP 2: JAVASCRIPT REPLACEMENT (IN script.js)
+
+You need to update the main selector in the "HERO ANIMATION BLOCK" of your script.js file to target ALL of these elements simultaneously.
+
+Find this original line (or similar):
+
+const heroLetters = gsap.utils.toArray(".heroSection h1 span");
+
+REPLACE it with this generalized selector:
+
+const gravityLetters = gsap.utils.toArray(".js-variable-gravity span");
+
+
+Now, update all subsequent references in that code block from 'heroLetters' to 'gravityLetters'.
+
+For example, this line:
+gsap.set(heroLetters, { /* ... */ });
+
+Becomes this:
+gsap.set(gravityLetters, { /* ... */ });
+
+--------------------------------------------------------------------------------
+
+STEP 3: CSS CONSIDERATIONS
+
+Ensure the custom font-variation-settings are applied to the text elements you are targeting (e.g., h1 and h2).
+
+Example CSS:
+.js-variable-gravity {
+    font-family: 'Inter', sans-serif;
+    /* This setting is controlled dynamically by the JS, but the font must be specified */
+    font-variation-settings: 'wght' 300, 'SLNT' -10; 
+}

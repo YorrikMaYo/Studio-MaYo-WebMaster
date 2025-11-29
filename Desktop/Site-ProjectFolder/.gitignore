@@ -1,0 +1,12 @@
+# Node / npm
+node_modules/
+package-lock.json
+
+# VS Code
+.vscode/
+
+# macOS system files
+.DS_Store
+
+# Temporary / live-server files
+__live-server__/
